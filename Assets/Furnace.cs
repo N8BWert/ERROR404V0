@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Furnace : MonoBehaviour
 {
-    public GameObject manager;
+    private Animator anim;
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (other.CompareTag("Enemy"))
-        {
-            Debug.Log("BRUH");
-            other.gameObject.GetComponent<BacteriaDeath>().DIE();
-            manager.GetComponent<CountDown>().AddTime();
-        }
+        anim = GetComponent<Animator>();
+    }
+
+    public void PlayAnimation()
+    {
+        anim.SetBool("On", true);
+    }
+    void OffAnimation()
+    {
+        anim.SetBool("On", false);
     }
 }

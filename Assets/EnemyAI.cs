@@ -21,10 +21,15 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<BacteriaDeath>().isActive)
+         StunCheck();
+         DistanceCheck();
+        ActivityCheck();
+    }
+    void ActivityCheck ()
+    {
+        if(!GetComponent<BacteriaDeath>().isActive)
         {
-            StunCheck();
-            DistanceCheck();
+            agent.isStopped = true;
         }
     }
     void StunCheck()

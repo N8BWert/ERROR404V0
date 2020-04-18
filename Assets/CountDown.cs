@@ -10,6 +10,7 @@ public class CountDown : MonoBehaviour
     public float ogTime = 3600;
     private int minutes;
     private int seconds;
+    public GameObject Furnace;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class CountDown : MonoBehaviour
     }
     public void AddTime()
     {
-        timeLeft += 60;
+        timeLeft += 60 * Time.deltaTime;
+        Furnace.GetComponent<Furnace>().PlayAnimation();
     }
 }
