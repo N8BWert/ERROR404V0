@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour
     {
          StunCheck();
          DistanceCheck();
-        ActivityCheck();
+         ActivityCheck();
     }
     void ActivityCheck ()
     {

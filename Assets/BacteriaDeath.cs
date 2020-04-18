@@ -10,10 +10,11 @@ public class BacteriaDeath : MonoBehaviour
     float Dist;
     public float deathDist = 6;
     GameObject Manager;
+    List<GameObject> DeathLocations = new List<GameObject>();
 
     private void Start()
     {
-        DeathLocation = GameObject.FindGameObjectWithTag("Furnace");
+        DeathLocation= GameObject.FindGameObjectWithTag("Furnace");
         anim = GetComponent<Animator>();
         Manager = GameObject.FindGameObjectWithTag("Manager");
     }
@@ -27,7 +28,7 @@ public class BacteriaDeath : MonoBehaviour
     }
     void Deathdestination ()
     {
-        Dist = Vector3.Distance(gameObject.transform.position, DeathLocation.transform.position);
+            Dist = Vector3.Distance(gameObject.transform.position, DeathLocation.transform.position);
     }
     void DIE()
     {

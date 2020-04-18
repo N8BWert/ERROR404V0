@@ -11,9 +11,11 @@ public class CountDown : MonoBehaviour
     private int minutes;
     private int seconds;
     public GameObject Furnace;
+    Animator anim;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         timeLeft = ogTime;
     }
 
@@ -24,10 +26,31 @@ public class CountDown : MonoBehaviour
         minutes = Mathf.FloorToInt(timeLeft / 60);
         seconds = Mathf.FloorToInt(timeLeft % 60);
         Countdown.text = "Time: " + minutes + ":" + seconds;
+        Ending();
     }
     public void AddTime()
     {
         timeLeft += 60 * Time.deltaTime;
         Furnace.GetComponent<Furnace>().PlayAnimation();
+    }
+    public void LessTime()
+    {
+        timeLeft -= 20 * Time.deltaTime;
+        anim.SetBool("isHurt", true);
+    }
+    public void ICTime()
+    {
+        timeLeft += 5;
+    }
+    public void Unhurt()
+    {
+        anim.SetBool("isHurt", false);
+    }
+    void Ending()
+    {
+        if(minutes <= 0 && seconds <= 0)
+        {
+            anim.SetBool("isDead", true);
+        }
     }
 }
