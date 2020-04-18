@@ -8,10 +8,12 @@ public class ICLife : MonoBehaviour
     public float currentHealth;
     public Transform spawnLocation;
     public GameObject Crystal;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         currentHealth = startHealth;
     }
 
@@ -34,5 +36,14 @@ public class ICLife : MonoBehaviour
         {
             currentHealth -= Time.deltaTime;
         }
+    }
+    public void Damage()
+    {
+        currentHealth -= Time.deltaTime;
+        anim.SetBool("isHurt", true);
+    }
+    public void UnHurt()
+    {
+        anim.SetBool("isHurt", false);
     }
 }
