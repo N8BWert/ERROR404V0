@@ -23,6 +23,7 @@ public class RobotController : MonoBehaviour
         moveDirection *= moveSpeed;
         StunCheck();
         MovementCheck();
+        Rotator();
         PickUpCheck();
         cc.Move(moveDirection);
     }
@@ -37,12 +38,19 @@ public class RobotController : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
     }
+    void Rotator()
+    {
+        if (moveDirection != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(moveDirection);
+        }
+    }
     void StunCheck ()
     {
         if(Input.GetButton("Fire1"))
         {
             anim.SetBool("Stun", true);
-            moveDirection = new Vector3(0f, 0f, 0f);
+            moveDirection *= 0;
         }
         else
         {
