@@ -168,7 +168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2752687116223140491}
   - component: {fileID: 5764764762379993038}
-  - component: {fileID: 7969620111610903470}
   m_Layer: 0
   m_Name: IC
   m_TagString: Untagged
@@ -244,20 +243,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.004035197, z: 0.0016825134}
     m_Extent: {x: 0.0071835313, y: 0.011147608, z: 0.002845942}
   m_DirtyAABB: 0
---- !u!64 &7969620111610903470
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7937452095540402812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5045536610241524929, guid: 4d37fb02f2c9d9747a2b5e276e54d566, type: 3}
 --- !u!1 &7969620112224540830
 GameObject:
   m_ObjectHideFlags: 0

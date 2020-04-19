@@ -11,9 +11,12 @@ public class BacteriaDeath : MonoBehaviour
     public float deathDist = 6;
     GameObject Manager;
     List<GameObject> DeathLocations = new List<GameObject>();
+    public AudioClip DeathSound;
+    AudioSource Source;
 
     private void Start()
     {
+        Source = GetComponent<AudioSource>();
         DeathLocation= GameObject.FindGameObjectWithTag("Furnace");
         anim = GetComponent<Animator>();
         Manager = GameObject.FindGameObjectWithTag("Manager");
@@ -34,6 +37,7 @@ public class BacteriaDeath : MonoBehaviour
     {
         isActive = false;
         Manager.GetComponent<CountDown>().AddTime();
+        Source.PlayOneShot(DeathSound, 0.4f);
         anim.SetBool("isDead", true);
         Destroy(gameObject, 0.5f);
     }

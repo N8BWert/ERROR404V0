@@ -8,11 +8,15 @@ public class RobotController : MonoBehaviour
     Animator anim;
     CharacterController cc;
     public float YDistance;
+    public AudioClip Movement;
+    public AudioClip Stun;
+    private AudioSource Source;
 
     private Vector3 moveDirection = Vector3.zero;
 
     void Start()
     {
+        Source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>();
     }
@@ -34,6 +38,7 @@ public class RobotController : MonoBehaviour
         if (Mathf.Abs(moveDirection.magnitude) > 0)
         {
             anim.SetBool("isMoving", true);
+            Source.PlayOneShot(Movement, 0.4f);
         }
         else
         {
@@ -59,6 +64,7 @@ public class RobotController : MonoBehaviour
         if(Input.GetButton("Fire1"))
         {
             anim.SetBool("Stun", true);
+            Source.PlayOneShot(Stun, 0.75f);
             moveDirection *= 0;
         }
         else
