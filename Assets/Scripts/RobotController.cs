@@ -7,11 +7,14 @@ public class RobotController : MonoBehaviour
     public float moveSpeed = 2;
     Animator anim;
     CharacterController cc;
+    public float distGround;
+    public bool isGrounded = true;
 
     private Vector3 moveDirection = Vector3.zero;
 
     void Start()
     {
+        distGround = GetComponent<Collider>().bounds.extents.y + 0.2f;
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>();
     }
@@ -23,9 +26,22 @@ public class RobotController : MonoBehaviour
         moveDirection *= moveSpeed;
         StunCheck();
         MovementCheck();
+        GroundCheck();
         Rotator();
         PickUpCheck();
         cc.Move(moveDirection);
+    }
+    void GroundCheck()
+    {
+        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Ground").transform.position, gameObject.transform.position) > distGround)
+        {
+            isGrounded = true;
+            moveDirection.y = -0.5f * Time.deltaTime;
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
     void MovementCheck ()
     {
@@ -43,6 +59,10 @@ public class RobotController : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(moveDirection);
+        }
+        else
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.zero, Vector3.up);
         }
     }
     void StunCheck ()

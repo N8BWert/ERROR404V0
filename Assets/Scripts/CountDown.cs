@@ -12,6 +12,7 @@ public class CountDown : MonoBehaviour
     private int seconds;
     public GameObject Furnace;
     Animator anim;
+    public bool TheEnd = false;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class CountDown : MonoBehaviour
         if(minutes <= 0 && seconds <= 0)
         {
             anim.SetBool("isDead", true);
+            TheEnd = true;
         }
     }
 }

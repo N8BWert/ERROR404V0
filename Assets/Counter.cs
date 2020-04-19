@@ -7,9 +7,16 @@ public class Counter : MonoBehaviour
 {
     public Text Clock;
     public Text Level;
+    public Text ScoreText;
+    public GameObject YourScoreIs;
+    public GameObject ScoreBackground;
+    public GameObject Instructions;
     private int minutes;
     private int seconds;
     public int currentLevel;
+    public bool isWorking = true;
+    public GameObject manager;
+    public int Score;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +29,28 @@ public class Counter : MonoBehaviour
     {
         ClockUpdate();
         LevelCheck();
+        Working();
+    }
+    void Working()
+    {
+        isWorking = manager.GetComponent<CountDown>().TheEnd;
+        if(isWorking)
+        {
+            Score = minutes * 60 + seconds;
+            ScoreText.text = "" + Score;
+            YourScoreIs.SetActive(true);
+            ScoreBackground.SetActive(true);
+            Instructions.SetActive(true);
+        }
     }
     void ClockUpdate()
     {
-        minutes = Mathf.FloorToInt(Time.time / 60);
-        seconds = Mathf.FloorToInt(Time.time % 60);
-        Clock.text = minutes + ":" + seconds;
+        if (!isWorking)
+        {
+            minutes = Mathf.FloorToInt(Time.time / 60);
+            seconds = Mathf.FloorToInt(Time.time % 60);
+            Clock.text = minutes + ":" + seconds;
+        }
     }
     void LevelCheck()
     {
