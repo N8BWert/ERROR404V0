@@ -78,7 +78,7 @@ Animator:
   m_GameObject: {fileID: 2141508155252613822}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4d37fb02f2c9d9747a2b5e276e54d566, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2eff18f5fb2bf34bb27def05b514ba7, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9de5619b81cb4489314adb2d7a40c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 10
+  startHealth: 30
   currentHealth: 0
   spawnLocation: {fileID: 7969620112224540831}
-  Crystal: {fileID: 0}
+  Crystal: {fileID: 2674268215966530678, guid: aadcac31bdc73ce4a8f51002e2e3b825, type: 3}
 --- !u!1 &3281472129354376694
 GameObject:
   m_ObjectHideFlags: 0

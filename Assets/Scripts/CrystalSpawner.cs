@@ -7,6 +7,7 @@ public class CrystalSpawner : MonoBehaviour
     public List<GameObject> Enemies = new List<GameObject>();
     int Num;
     public Transform enemySpawn;
+    public int waitTime = 5;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class CrystalSpawner : MonoBehaviour
         {
             Num = Random.Range(0, Enemies.Count);
             Instantiate(Enemies[Num], enemySpawn.position, enemySpawn.rotation);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(waitTime);
             yield return null;
         }
     }

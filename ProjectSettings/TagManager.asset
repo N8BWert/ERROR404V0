@@ -8,6 +8,7 @@ TagManager:
   - Furnace
   - Manager
   - IC
+  - DifMan
   layers:
   - Default
   - TransparentFX
