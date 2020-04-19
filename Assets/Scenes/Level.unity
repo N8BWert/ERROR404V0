@@ -1543,7 +1543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1665,6 +1665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318881296564314177, guid: e49841a76f92bd645ba01750900e9311,
+        type: 3}
+      propertyPath: YDistance
+      value: 4.38
       objectReference: {fileID: 0}
     - target: {fileID: 5204643007437639957, guid: e49841a76f92bd645ba01750900e9311,
         type: 3}
@@ -2244,7 +2249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: acf150174f3cc684a9c40ab9cbc834cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2280,7 +2285,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439678797}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
@@ -2290,7 +2295,7 @@ Transform:
   - {fileID: 201603801}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &447229902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3276,7 +3281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &692701479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3575,6 +3580,7 @@ GameObject:
   - component: {fileID: 783883570}
   - component: {fileID: 783883569}
   - component: {fileID: 783883571}
+  - component: {fileID: 783883572}
   m_Layer: 0
   m_Name: DifficultyManager
   m_TagString: DifMan
@@ -3600,10 +3606,12 @@ MonoBehaviour:
   YourScoreIs: {fileID: 1913402660}
   ScoreBackground: {fileID: 861385139}
   Instructions: {fileID: 293875057}
+  Scoreobject: {fileID: 692701478}
   currentLevel: 0
   isWorking: 1
   manager: {fileID: 1675242797}
   Score: 0
+  timeOffset: 0
 --- !u!4 &783883570
 Transform:
   m_ObjectHideFlags: 0
@@ -3630,6 +3638,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00ff729bf5d95e40b58f5b1200d6775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeveled: 1
+--- !u!114 &783883572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783883568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705d75891c438b74686985d7e3568c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cap: 20
+  StopCrystals: 0
+  CrystalPlacer: {fileID: 879646920}
 --- !u!1001 &803492234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3816,7 +3840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ef54e6c83656a1e4fa6f85d9757aa126, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7070,36 +7094,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 307170698}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1659906478
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659906470}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 16
-  m_CollisionDetection: 0
---- !u!136 &1659906479
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659906470}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.64
-  m_Height: 8.482355
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.57613087, z: 0}
 --- !u!1 &1675242797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6160979995604202985, guid: 7a89b83ecb70c6e439088f6edbdb2158,
@@ -7997,7 +7991,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8b5f1bf601ab97d4ca7010205e4ab17d, type: 3}
-    m_FontSize: 1
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

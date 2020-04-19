@@ -26,7 +26,14 @@ public class CountDown : MonoBehaviour
         timeLeft -= Time.deltaTime;
         minutes = Mathf.FloorToInt(timeLeft / 60);
         seconds = Mathf.FloorToInt(timeLeft % 60);
-        Countdown.text = "Time: " + minutes + ":" + seconds;
+        if(minutes <= 0 && seconds <= 0)
+        {
+            Countdown.text = "Time: 0:00";
+        }
+        else
+        {
+            Countdown.text = "Time: " + minutes + ":" + seconds;
+        }
         Ending();
     }
     public void AddTime()
@@ -52,7 +59,11 @@ public class CountDown : MonoBehaviour
         if(minutes <= 0 && seconds <= 0)
         {
             anim.SetBool("isDead", true);
-            TheEnd = true;
+            Invoke("SetTheEndTrue", 1.6f);
         }
+    }
+    void SetTheEndTrue()
+    {
+        TheEnd = true;
     }
 }

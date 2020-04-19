@@ -10,6 +10,7 @@ TagManager:
   - IC
   - DifMan
   - Ground
+  - Crystal
   layers:
   - Default
   - TransparentFX
