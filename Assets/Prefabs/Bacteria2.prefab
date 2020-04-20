@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988e3cdfd81b7ed46bdbb2a701663a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunTime: 3
+  stunTime: 7.5
   currentStunTime: 0
   stunMaterial: {fileID: 2100000, guid: cff3260644af6c249a6a3145487f9215, type: 2}
   normalMaterial: {fileID: 2100000, guid: b416c88c075c6ea4387ebd30e7dbc821, type: 2}

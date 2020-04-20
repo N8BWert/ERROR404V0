@@ -8,7 +8,6 @@ public class RobotController : MonoBehaviour
     Animator anim;
     CharacterController cc;
     public float YDistance;
-    public AudioClip Movement;
     public AudioClip Stun;
     private AudioSource Source;
 
@@ -38,7 +37,6 @@ public class RobotController : MonoBehaviour
         if (Mathf.Abs(moveDirection.magnitude) > 0)
         {
             anim.SetBool("isMoving", true);
-            Source.PlayOneShot(Movement, 0.4f);
         }
         else
         {

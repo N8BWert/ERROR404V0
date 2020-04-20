@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988e3cdfd81b7ed46bdbb2a701663a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunTime: 3
+  stunTime: 7.5
   currentStunTime: 0
   stunMaterial: {fileID: 2100000, guid: 8a9de1a50f0d83b43bc9ad72cac92697, type: 2}
   normalMaterial: {fileID: 2100000, guid: f7e8f4a7f4a1a0c47aa85de85c357801, type: 2}
